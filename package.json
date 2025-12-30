@@ -1,0 +1,21 @@
+{
+  "name": "collabwallets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "nuxt": "^3.13.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "lucide-vue-next": "^0.344.0"
+  }
+}
+
