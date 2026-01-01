@@ -9,9 +9,9 @@
       </TabButton>
     </div>
 
-    <div class="mb-4">
-      <p class="text-white font-medium mb-3 text-sm">Popular:</p>
-      <div class="space-y-2 max-h-[20vh] overflow-y-auto">
+    <div class="mb-3 sm:mb-4">
+      <p class="text-white font-medium mb-2 sm:mb-3 text-xs sm:text-sm">Popular:</p>
+      <div class="space-y-1.5 sm:space-y-2 max-h-[15vh] sm:max-h-[20vh] overflow-y-auto">
         <WalletItem
           v-for="wallet in popularWallets"
           :key="wallet.id"

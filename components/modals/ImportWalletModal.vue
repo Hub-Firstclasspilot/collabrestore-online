@@ -5,30 +5,30 @@
       class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
       @click.self="$emit('update:modelValue', false)"
     >
-      <div class="bg-[#1e1b4b] rounded-lg w-full max-w-md mx-4 max-h-[90vh] flex flex-col border border-blue-900 overflow-hidden relative">
+      <div class="bg-[#1e1b4b] rounded-lg w-full max-w-md mx-2 sm:mx-4 max-h-[90vh] flex flex-col border border-blue-900 overflow-hidden relative">
         <!-- Close Button -->
         <button
           @click="$emit('update:modelValue', false)"
-          class="absolute top-4 right-4 w-8 h-8 rounded-full bg-yellow-500 hover:bg-yellow-600 flex items-center justify-center transition-colors z-10"
+          class="absolute top-2 sm:top-4 right-2 sm:right-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-yellow-500 hover:bg-yellow-600 flex items-center justify-center transition-colors z-10"
         >
-          <X class="w-5 h-5 text-white" />
+          <X class="w-4 h-4 sm:w-5 sm:h-5 text-white" />
         </button>
 
         <!-- Scrollable Content -->
-        <div class="p-6 overflow-y-auto flex-1">
+        <div class="p-4 sm:p-6 overflow-y-auto flex-1">
           <!-- Title -->
-          <h2 class="text-white text-xl font-bold mb-2 pr-10">
+          <h2 class="text-white text-base sm:text-xl font-bold mb-2 pr-8 sm:pr-10">
             Import your wallet with your Secret Recovery Phrase
           </h2>
-          <p class="text-gray-400 text-sm mb-6">
+          <p class="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-6">
             Enter the Secret Recovery Phrase that you were given when you created your wallet.
           </p>
 
           <!-- Toggle Buttons -->
-          <div class="flex gap-2 mb-4">
+          <div class="flex gap-2 mb-3 sm:mb-4">
             <button
               :class="[
-                'flex-1 py-2 px-4 rounded-lg font-medium transition-colors',
+                'flex-1 py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg font-medium transition-colors text-xs sm:text-sm',
                 importType === 'seed'
                   ? 'bg-yellow-500 text-white'
                   : 'bg-transparent border border-gray-700 text-white hover:border-gray-600'
@@ -39,7 +39,7 @@
             </button>
             <button
               :class="[
-                'flex-1 py-2 px-4 rounded-lg font-medium transition-colors',
+                'flex-1 py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg font-medium transition-colors text-xs sm:text-sm',
                 importType === 'private'
                   ? 'bg-yellow-500 text-white'
                   : 'bg-transparent border border-gray-700 text-white hover:border-gray-600'
@@ -63,17 +63,17 @@
           </div>
 
           <!-- Seed Phrase Input Grid -->
-          <div v-if="importType === 'seed'" class="grid grid-cols-3 gap-2 mb-6">
+          <div v-if="importType === 'seed'" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-4 sm:mb-6">
             <div
               v-for="i in parseInt(wordCount)"
               :key="i"
               class="flex items-center gap-1.5 min-w-0"
             >
-              <span class="text-gray-400 text-xs flex-shrink-0 w-7">{{ String(i).padStart(2, '0') }}</span>
+              <span class="text-gray-400 text-xs flex-shrink-0 w-6 sm:w-7">{{ String(i).padStart(2, '0') }}</span>
               <input
                 v-model="seedWords[i - 1]"
                 type="text"
-                class="flex-1 min-w-0 px-2 py-1.5 bg-dark-card border border-gray-700 rounded text-white text-sm focus:outline-none focus:border-yellow-500"
+                class="flex-1 min-w-0 px-2 py-1.5 bg-dark-card border border-gray-700 rounded text-white text-xs sm:text-sm focus:outline-none focus:border-yellow-500"
                 :placeholder="String(i).padStart(2, '0')"
               />
             </div>
@@ -91,10 +91,10 @@
         </div>
 
         <!-- Fixed Footer with Confirm Button -->
-        <div class="p-6 pt-0 border-t border-gray-800">
+        <div class="p-4 sm:p-6 pt-0 border-t border-gray-800">
           <button
             @click="handleConfirm"
-            class="w-full py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-medium rounded-lg transition-colors"
+            class="w-full py-2.5 sm:py-3 bg-yellow-500 hover:bg-yellow-600 text-white text-sm sm:text-base font-medium rounded-lg transition-colors"
           >
             Confirm Secret Recovery Phrase
           </button>

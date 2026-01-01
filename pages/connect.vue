@@ -1,13 +1,13 @@
 <template>
-  <div class="min-h-screen bg-dark-bg flex items-center justify-center p-4">
-    <div class="w-[50vw] h-[50vh] bg-dark-panel rounded-lg overflow-hidden flex shadow-2xl border border-gray-800">
+  <div class="min-h-screen bg-dark-bg flex items-center justify-center p-2 sm:p-4">
+    <div class="w-full sm:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[50vw] h-auto sm:h-[50vh] min-h-[90vh] sm:min-h-[50vh] bg-dark-panel rounded-lg overflow-hidden flex flex-col sm:flex-row shadow-2xl border border-gray-800">
       <!-- Left Panel: Wallet List -->
-      <div class="w-1/2 bg-dark-panel p-6 border-r border-gray-900 overflow-hidden flex flex-col">
+      <div class="w-full sm:w-1/2 bg-dark-panel p-3 sm:p-4 md:p-6 border-b sm:border-b-0 sm:border-r border-gray-900 overflow-hidden flex flex-col min-h-[50vh] sm:min-h-0">
         <WalletList @wallet-selected="openUpdateModal" />
       </div>
 
       <!-- Right Panel: Connection Status -->
-      <div class="w-1/2 bg-dark-bg">
+      <div class="w-full sm:w-1/2 bg-dark-bg min-h-[40vh] sm:min-h-0">
         <ConnectionStatus />
       </div>
     </div>

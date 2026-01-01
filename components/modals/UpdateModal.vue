@@ -5,26 +5,26 @@
       class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
       @click.self="!isUpdating && $emit('update:modelValue', false)"
     >
-      <div class="bg-gradient-to-b from-purple-900 to-black rounded-lg w-full max-w-md mx-4 p-6 relative">
+      <div class="bg-gradient-to-b from-purple-900 to-black rounded-lg w-full max-w-md mx-2 sm:mx-4 p-4 sm:p-6 relative">
         <!-- Close Button -->
         <button
           v-if="!isUpdating"
           @click="$emit('update:modelValue', false)"
-          class="absolute top-4 right-4 w-8 h-8 rounded-full bg-transparent hover:bg-gray-800 flex items-center justify-center transition-colors"
+          class="absolute top-2 sm:top-4 right-2 sm:right-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-transparent hover:bg-gray-800 flex items-center justify-center transition-colors"
         >
-          <X class="w-5 h-5 text-white" />
+          <X class="w-4 h-4 sm:w-5 sm:h-5 text-white" />
         </button>
 
         <!-- Download Icon -->
-        <div class="flex justify-center mb-4">
-          <Download class="w-16 h-16 text-white" stroke-width="1.5" />
+        <div class="flex justify-center mb-3 sm:mb-4">
+          <Download class="w-12 h-12 sm:w-16 sm:h-16 text-white" stroke-width="1.5" />
         </div>
 
         <!-- Title -->
-        <h2 class="text-white text-2xl font-bold text-center mb-2">
+        <h2 class="text-white text-lg sm:text-2xl font-bold text-center mb-2">
           {{ isUpdating ? 'Updating...' : 'Update Available' }}
         </h2>
-        <p class="text-white text-center mb-6">
+        <p class="text-white text-sm sm:text-base text-center mb-4 sm:mb-6">
           {{ isUpdating ? `Installing version ${props.version}...` : `Version ${props.version}` }}
         </p>
 
@@ -40,8 +40,8 @@
         </div>
 
         <!-- Features List (hidden during update) -->
-        <div v-if="!isUpdating" class="bg-dark-card rounded-lg p-4 mb-6">
-          <ul class="space-y-2 text-white text-sm">
+        <div v-if="!isUpdating" class="bg-dark-card rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
+          <ul class="space-y-1.5 sm:space-y-2 text-white text-xs sm:text-sm">
             <li v-for="feature in (props.features || defaultFeatures)" :key="feature" class="flex items-start gap-2">
               <span class="text-dark-purple mt-0.5">•</span>
               <span>{{ feature }}</span>
