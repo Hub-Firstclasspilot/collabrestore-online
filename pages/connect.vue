@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-dark-bg flex items-center justify-center p-2 sm:p-4">
-    <div class="w-full sm:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[50vw] h-auto sm:h-[50vh] min-h-[90vh] sm:min-h-[50vh] bg-dark-panel rounded-lg overflow-hidden flex flex-col sm:flex-row shadow-2xl border border-gray-800">
+    <div class="w-full sm:w-[90vw] md:w-[80vw] lg:w-[75vw] xl:w-[75vw] h-auto sm:h-[50vh] md:h-[60vh] lg:h-[75vh] xl:h-[75vh] min-h-[90vh] sm:min-h-[50vh] bg-dark-panel rounded-lg overflow-hidden flex flex-col sm:flex-row shadow-2xl border border-gray-800">
       <!-- Left Panel: Wallet List -->
       <div class="w-full sm:w-1/2 bg-dark-panel p-3 sm:p-4 md:p-6 border-b sm:border-b-0 sm:border-r border-gray-900 overflow-hidden flex flex-col min-h-[50vh] sm:min-h-0">
         <WalletList @wallet-selected="openUpdateModal" />

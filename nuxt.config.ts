@@ -16,6 +16,16 @@ export default defineNuxtConfig({
       routes: ['/connect']
     }
   },
+  // Router configuration to ignore static asset paths
+  router: {
+    options: {
+      strict: false
+    }
+  },
+  // Ignore wallet-icons paths in router
+  experimental: {
+    watcher: false
+  },
   // Production optimizations
   app: {
     head: {
