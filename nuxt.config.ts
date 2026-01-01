@@ -9,5 +9,19 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+  // Static site generation configuration
+  ssr: true,
+  nitro: {
+    prerender: {
+      routes: ['/connect']
+    }
+  },
+  // Production optimizations
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    }
+  }
 })
 
